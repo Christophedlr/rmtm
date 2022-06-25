@@ -26,3 +26,13 @@ class Rmtm:
 
     def put_file(self, local, remote, recursive: bool = False):
         self.scp_connection.put(local, remote_path=remote, recursive=recursive)
+
+    def add_entry(self, name: str, filename: str, categories: list, icon_code: str = "\ue9fe") -> dict:
+        entry: dict = {}
+
+        entry["name"] = name
+        entry["filename"] = filename
+        entry["iconCode"] = icon_code
+        entry["categories"] = categories
+
+        return entry

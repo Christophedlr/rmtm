@@ -23,3 +23,6 @@ class Rmtm:
 
     def get_file(self, remote, local, recursive: bool = False):
         self.scp_connection.get(remote, local, recursive=recursive)
+
+    def put_file(self, local, remote, recursive: bool = False):
+        self.scp_connection.put(local, remote_path=remote, recursive=recursive)
